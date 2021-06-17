@@ -48,7 +48,7 @@
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPass.Location = new System.Drawing.Point(110, 39);
+            this.lblPass.Location = new System.Drawing.Point(14, 36);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(196, 47);
             this.lblPass.TabIndex = 0;

@@ -44,32 +44,38 @@ namespace CPass
                 if (optSymbols.Checked) { symbols = true; }
                 else { symbols = false; }
 
-                passLength = barLength.Value;
-
-            var rand = new Random();
-
-            while (password.Length < passLength)
-            {
-                int nextChar = rand.Next(1, 4);
-                if (nextChar == 1 && capitals == true)
+                if (capitals == false && lowercase == false && numbers == false && symbols == false)
                 {
-                   
+                    MessageBox.Show("Please select some options", "Cannot Generate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (nextChar == 2 && lowercase == true)
+                else
                 {
+                    passLength = barLength.Value;
 
-                }
-                else if (nextChar == 3 && numbers == true)
-                {
-                    password = password + Convert.ToString(rand.Next(0, 9));
-                }
-                else if (nextChar == 4 && symbols == true)
-                {
-                    password = password + symbolsArray[rand.Next(0, 6)];
-                }
-            }
+                    var rand = new Random();
 
-
+                    while (password.Length < passLength)
+                    {
+                        int nextChar = rand.Next(1, 5);
+                        if (nextChar == 1 && capitals == true)
+                        {
+                            password = password + (char)rand.Next(65, 91);
+                        }
+                        else if (nextChar == 2 && lowercase == true)
+                        {
+                            password = password + (char)rand.Next(97, 123);
+                        }
+                        else if (nextChar == 3 && numbers == true)
+                        {
+                            password = password + Convert.ToString(rand.Next(0, 10));
+                        }
+                        else if (nextChar == 4 && symbols == true)
+                        {
+                            password = password + symbolsArray[rand.Next(0, 7)];
+                        }
+                    }
+                    lblPass.Text = password;
+                }
         }
 
         private void barLength_Scroll(object sender, EventArgs e){ lblLength.Text = Convert.ToString(barLength.Value); }
