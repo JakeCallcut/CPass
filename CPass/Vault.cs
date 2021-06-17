@@ -20,7 +20,43 @@ namespace CPass
 
         private void Vault_Load(object sender, EventArgs e)
         {
+            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.txt\";
+            if (!File.Exists(path))
+            {
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    string s;
+                    while ((s = sr.ReadLine()) != null)
+                    {
+                        string title = "";
+                        for (int i = 0; i < s.Length; i++)
+                        {
+                            if (s.Substring(i, 1) == ",")
+                            {
+                                i = s.Length;
+                            }
+                            else
+                            {
+                                title = title + s.Substring(i, 1);
+                            }
+                        }
+                        passlist.Items.Add(title);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Accounts.txt is missing", "Critical Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+            using (StreamReader sr = File.OpenText(path))
+            {
+                string s;
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -32,6 +68,12 @@ namespace CPass
         {
             var _passGen = new PassGen();
             _passGen.Show();
+        }
+
+        private void lockVault_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Are you sure?", "Lock Vault?");
+            Application.Exit();
         }
     }
 }

@@ -32,52 +32,57 @@ namespace CPass
             int passLength;
             string password = "";
 
-                if (optCapitals.Checked) { capitals = true; }
-                else { capitals = false; }
+            if (optCapitals.Checked) { capitals = true; }
+            else { capitals = false; }
 
-                if (optLower.Checked) { lowercase = true; }
-                else { lowercase = false; }
+            if (optLower.Checked) { lowercase = true; }
+            else { lowercase = false; }
 
-                if (optNumbers.Checked) { numbers = true; }
-                else { numbers = false; }
+            if (optNumbers.Checked) { numbers = true; }
+            else { numbers = false; }
 
-                if (optSymbols.Checked) { symbols = true; }
-                else { symbols = false; }
+            if (optSymbols.Checked) { symbols = true; }
+            else { symbols = false; }
 
-                if (capitals == false && lowercase == false && numbers == false && symbols == false)
+            if (capitals == false && lowercase == false && numbers == false && symbols == false)
+            {
+                MessageBox.Show("Please select some options", "Cannot Generate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                passLength = barLength.Value;
+
+                var rand = new Random();
+
+                while (password.Length < passLength)
                 {
-                    MessageBox.Show("Please select some options", "Cannot Generate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    passLength = barLength.Value;
-
-                    var rand = new Random();
-
-                    while (password.Length < passLength)
+                    int nextChar = rand.Next(1, 5);
+                    if (nextChar == 1 && capitals == true)
                     {
-                        int nextChar = rand.Next(1, 5);
-                        if (nextChar == 1 && capitals == true)
-                        {
-                            password = password + (char)rand.Next(65, 91);
-                        }
-                        else if (nextChar == 2 && lowercase == true)
-                        {
-                            password = password + (char)rand.Next(97, 123);
-                        }
-                        else if (nextChar == 3 && numbers == true)
-                        {
-                            password = password + Convert.ToString(rand.Next(0, 10));
-                        }
-                        else if (nextChar == 4 && symbols == true)
-                        {
-                            password = password + symbolsArray[rand.Next(0, 7)];
-                        }
+                        password = password + (char)rand.Next(65, 91);
                     }
-                    lblPass.Text = password;
+                    else if (nextChar == 2 && lowercase == true)
+                    {
+                        password = password + (char)rand.Next(97, 123);
+                    }
+                    else if (nextChar == 3 && numbers == true)
+                    {
+                        password = password + Convert.ToString(rand.Next(0, 10));
+                    }
+                    else if (nextChar == 4 && symbols == true)
+                    {
+                        password = password + symbolsArray[rand.Next(0, 7)];
+                    }
                 }
+                lblPass.Text = password;
+            }
         }
 
         private void barLength_Scroll(object sender, EventArgs e){ lblLength.Text = Convert.ToString(barLength.Value); }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(lblPass.Text);
+        }
     }
 }

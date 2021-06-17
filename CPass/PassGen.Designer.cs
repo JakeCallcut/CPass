@@ -151,6 +151,7 @@
             this.btnCopy.TabIndex = 3;
             this.btnCopy.Text = "Copy Password";
             this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // btnExit
             // 

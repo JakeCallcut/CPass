@@ -174,12 +174,13 @@
             this.lockVault.TabIndex = 5;
             this.lockVault.Text = "Lock Vault";
             this.lockVault.UseVisualStyleBackColor = true;
+            this.lockVault.Click += new System.EventHandler(this.lockVault_Click);
             // 
             // Vault
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 519);
+            this.ClientSize = new System.Drawing.Size(950, 514);
             this.Controls.Add(this.lockVault);
             this.Controls.Add(this.addAccount);
             this.Controls.Add(this.PassGen);
