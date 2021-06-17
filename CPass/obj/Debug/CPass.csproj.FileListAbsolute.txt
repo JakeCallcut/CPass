@@ -8,3 +8,4 @@ F:\Github repos\CPass\CPass\obj\Debug\CPass.csproj.GenerateResource.cache
 F:\Github repos\CPass\CPass\obj\Debug\CPass.csproj.CoreCompileInputs.cache
 F:\Github repos\CPass\CPass\obj\Debug\CPass.exe
 F:\Github repos\CPass\CPass\obj\Debug\CPass.pdb
+F:\Github repos\CPass\CPass\obj\Debug\CPass.Vault.resources
