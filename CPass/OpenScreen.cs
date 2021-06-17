@@ -22,7 +22,7 @@ namespace CPass
         {
             var _vault = new Vault();
             _vault.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

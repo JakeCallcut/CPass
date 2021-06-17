@@ -49,7 +49,7 @@
             // 
             this.groupBox1.Controls.Add(this.passlist);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 52);
+            this.groupBox1.Location = new System.Drawing.Point(12, 71);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 416);
             this.groupBox1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             this.passlist.FormattingEnabled = true;
             this.passlist.ItemHeight = 23;
-            this.passlist.Location = new System.Drawing.Point(6, 25);
+            this.passlist.Location = new System.Drawing.Point(6, 31);
             this.passlist.Name = "passlist";
             this.passlist.Size = new System.Drawing.Size(188, 372);
             this.passlist.TabIndex = 0;
@@ -68,7 +68,7 @@
             // dropdownpasses
             // 
             this.dropdownpasses.FormattingEnabled = true;
-            this.dropdownpasses.Location = new System.Drawing.Point(12, 12);
+            this.dropdownpasses.Location = new System.Drawing.Point(12, 25);
             this.dropdownpasses.Name = "dropdownpasses";
             this.dropdownpasses.Size = new System.Drawing.Size(200, 28);
             this.dropdownpasses.TabIndex = 0;
@@ -77,9 +77,9 @@
             // 
             this.accountinfo.FormattingEnabled = true;
             this.accountinfo.ItemHeight = 23;
-            this.accountinfo.Location = new System.Drawing.Point(199, 59);
+            this.accountinfo.Location = new System.Drawing.Point(206, 52);
             this.accountinfo.Name = "accountinfo";
-            this.accountinfo.Size = new System.Drawing.Size(299, 372);
+            this.accountinfo.Size = new System.Drawing.Size(320, 418);
             this.accountinfo.TabIndex = 1;
             // 
             // groupBox2
@@ -91,36 +91,36 @@
             this.groupBox2.Controls.Add(this.copyUser);
             this.groupBox2.Controls.Add(this.accountinfo);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(382, 12);
+            this.groupBox2.Location = new System.Drawing.Point(396, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(504, 449);
+            this.groupBox2.Size = new System.Drawing.Size(542, 495);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Account Info";
             // 
             // showPass
             // 
-            this.showPass.Location = new System.Drawing.Point(31, 195);
+            this.showPass.Location = new System.Drawing.Point(31, 205);
             this.showPass.Name = "showPass";
-            this.showPass.Size = new System.Drawing.Size(138, 63);
+            this.showPass.Size = new System.Drawing.Size(156, 74);
             this.showPass.TabIndex = 3;
             this.showPass.Text = "Show Password";
             this.showPass.UseVisualStyleBackColor = true;
             // 
             // editAccount
             // 
-            this.editAccount.Location = new System.Drawing.Point(31, 301);
+            this.editAccount.Location = new System.Drawing.Point(31, 314);
             this.editAccount.Name = "editAccount";
-            this.editAccount.Size = new System.Drawing.Size(138, 63);
+            this.editAccount.Size = new System.Drawing.Size(156, 75);
             this.editAccount.TabIndex = 5;
             this.editAccount.Text = "Edit Account";
             this.editAccount.UseVisualStyleBackColor = true;
             // 
             // deleteAccount
             // 
-            this.deleteAccount.Location = new System.Drawing.Point(31, 370);
+            this.deleteAccount.Location = new System.Drawing.Point(31, 395);
             this.deleteAccount.Name = "deleteAccount";
-            this.deleteAccount.Size = new System.Drawing.Size(138, 61);
+            this.deleteAccount.Size = new System.Drawing.Size(156, 75);
             this.deleteAccount.TabIndex = 3;
             this.deleteAccount.Text = "Delete Account";
             this.deleteAccount.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             // 
             this.copyPass.Location = new System.Drawing.Point(31, 127);
             this.copyPass.Name = "copyPass";
-            this.copyPass.Size = new System.Drawing.Size(138, 62);
+            this.copyPass.Size = new System.Drawing.Size(156, 75);
             this.copyPass.TabIndex = 4;
             this.copyPass.Text = "Copy Password";
             this.copyPass.UseVisualStyleBackColor = true;
@@ -137,9 +137,9 @@
             // 
             // copyUser
             // 
-            this.copyUser.Location = new System.Drawing.Point(31, 59);
+            this.copyUser.Location = new System.Drawing.Point(31, 52);
             this.copyUser.Name = "copyUser";
-            this.copyUser.Size = new System.Drawing.Size(138, 62);
+            this.copyUser.Size = new System.Drawing.Size(156, 73);
             this.copyUser.TabIndex = 3;
             this.copyUser.Text = "Copy Username";
             this.copyUser.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             // PassGen
             // 
             this.PassGen.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassGen.Location = new System.Drawing.Point(218, 150);
+            this.PassGen.Location = new System.Drawing.Point(218, 176);
             this.PassGen.Name = "PassGen";
             this.PassGen.Size = new System.Drawing.Size(158, 157);
             this.PassGen.TabIndex = 3;
@@ -158,7 +158,7 @@
             // addAccount
             // 
             this.addAccount.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addAccount.Location = new System.Drawing.Point(218, 12);
+            this.addAccount.Location = new System.Drawing.Point(218, 30);
             this.addAccount.Name = "addAccount";
             this.addAccount.Size = new System.Drawing.Size(158, 132);
             this.addAccount.TabIndex = 4;
@@ -168,7 +168,7 @@
             // lockVault
             // 
             this.lockVault.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lockVault.Location = new System.Drawing.Point(218, 313);
+            this.lockVault.Location = new System.Drawing.Point(218, 346);
             this.lockVault.Name = "lockVault";
             this.lockVault.Size = new System.Drawing.Size(158, 136);
             this.lockVault.TabIndex = 5;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 473);
+            this.ClientSize = new System.Drawing.Size(950, 519);
             this.Controls.Add(this.lockVault);
             this.Controls.Add(this.addAccount);
             this.Controls.Add(this.PassGen);
