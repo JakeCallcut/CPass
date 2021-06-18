@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Newtonsoft.Json;
+
 
 namespace CPass
 {
@@ -18,44 +20,19 @@ namespace CPass
             InitializeComponent();
         }
 
+        List<Account> accountList = new List<Account>();        
+
         private void Vault_Load(object sender, EventArgs e)
         {
-            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.txt\";
-            if (!File.Exists(path))
-            {
-                using (StreamReader sr = File.OpenText(path))
-                {
-                    string s;
-                    while ((s = sr.ReadLine()) != null)
-                    {
-                        string title = "";
-                        for (int i = 0; i < s.Length; i++)
-                        {
-                            if (s.Substring(i, 1) == ",")
-                            {
-                                i = s.Length;
-                            }
-                            else
-                            {
-                                title = title + s.Substring(i, 1);
-                            }
-                        }
-                        passlist.Items.Add(title);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Accounts.txt is missing", "Critical Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
+            LoadJson(path);
 
             using (StreamReader sr = File.OpenText(path))
             {
-                string s;
-                while ((s = sr.ReadLine()) != null)
+                for (int i = 0; i < accountList.Count; i++)
                 {
-                    Console.WriteLine(s);
-                }
+                    passlist.Items.Add(accountList[i].title);
+                } 
             }
         }
 
@@ -74,6 +51,20 @@ namespace CPass
         {
             MessageBox.Show("Are you sure?", "Lock Vault?");
             Application.Exit();
+        }
+
+        private void passlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void LoadJson(string _path)
+        {
+            using (StreamReader r = new StreamReader(_path))
+            {
+                string json = r.ReadToEnd();
+                accountList = JsonConvert.DeserializeObject<List<Account>>(json);
+            }
         }
     }
 }

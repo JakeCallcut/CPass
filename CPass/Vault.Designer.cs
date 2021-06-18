@@ -30,7 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.passlist = new System.Windows.Forms.ListBox();
-            this.dropdownpasses = new System.Windows.Forms.ComboBox();
             this.accountinfo = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.showPass = new System.Windows.Forms.Button();
@@ -49,9 +48,9 @@
             // 
             this.groupBox1.Controls.Add(this.passlist);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 71);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 416);
+            this.groupBox1.Size = new System.Drawing.Size(200, 490);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Your Passwords:";
@@ -62,16 +61,9 @@
             this.passlist.ItemHeight = 23;
             this.passlist.Location = new System.Drawing.Point(6, 31);
             this.passlist.Name = "passlist";
-            this.passlist.Size = new System.Drawing.Size(188, 372);
+            this.passlist.Size = new System.Drawing.Size(188, 441);
             this.passlist.TabIndex = 0;
-            // 
-            // dropdownpasses
-            // 
-            this.dropdownpasses.FormattingEnabled = true;
-            this.dropdownpasses.Location = new System.Drawing.Point(12, 25);
-            this.dropdownpasses.Name = "dropdownpasses";
-            this.dropdownpasses.Size = new System.Drawing.Size(200, 28);
-            this.dropdownpasses.TabIndex = 0;
+            this.passlist.SelectedIndexChanged += new System.EventHandler(this.passlist_SelectedIndexChanged);
             // 
             // accountinfo
             // 
@@ -147,7 +139,7 @@
             // PassGen
             // 
             this.PassGen.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassGen.Location = new System.Drawing.Point(218, 176);
+            this.PassGen.Location = new System.Drawing.Point(232, 160);
             this.PassGen.Name = "PassGen";
             this.PassGen.Size = new System.Drawing.Size(158, 157);
             this.PassGen.TabIndex = 3;
@@ -158,7 +150,7 @@
             // addAccount
             // 
             this.addAccount.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addAccount.Location = new System.Drawing.Point(218, 30);
+            this.addAccount.Location = new System.Drawing.Point(232, 22);
             this.addAccount.Name = "addAccount";
             this.addAccount.Size = new System.Drawing.Size(158, 132);
             this.addAccount.TabIndex = 4;
@@ -168,7 +160,7 @@
             // lockVault
             // 
             this.lockVault.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lockVault.Location = new System.Drawing.Point(218, 346);
+            this.lockVault.Location = new System.Drawing.Point(232, 326);
             this.lockVault.Name = "lockVault";
             this.lockVault.Size = new System.Drawing.Size(158, 136);
             this.lockVault.TabIndex = 5;
@@ -185,7 +177,6 @@
             this.Controls.Add(this.addAccount);
             this.Controls.Add(this.PassGen);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dropdownpasses);
             this.Controls.Add(this.groupBox1);
             this.Name = "Vault";
             this.Text = "CPass - Your Vault";
@@ -200,7 +191,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox passlist;
-        private System.Windows.Forms.ComboBox dropdownpasses;
         private System.Windows.Forms.ListBox accountinfo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button copyPass;

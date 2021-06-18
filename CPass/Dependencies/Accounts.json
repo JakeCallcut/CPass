@@ -1,0 +1,19 @@
+[ //Accounts list
+
+  {
+    "title": "Amazon",
+    "username": "user@gmail.com",
+    "password": "Password1"
+  },
+  {
+    "title": "Google",
+    "username": "lucy@gmail.com",
+    "password": "catpassword"
+  },
+  {
+    "title": "Reddit",
+    "username": "pasta@gmail.com",
+    "password": "pastaGood123"
+  }
+
+]

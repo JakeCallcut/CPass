@@ -10,3 +10,6 @@ F:\Github repos\CPass\CPass\obj\Debug\CPass.exe
 F:\Github repos\CPass\CPass\obj\Debug\CPass.pdb
 F:\Github repos\CPass\CPass\obj\Debug\CPass.Vault.resources
 F:\Github repos\CPass\CPass\obj\Debug\CPass.PassGen.resources
+F:\Github repos\CPass\CPass\bin\Debug\Newtonsoft.Json.dll
+F:\Github repos\CPass\CPass\bin\Debug\Newtonsoft.Json.xml
+F:\Github repos\CPass\CPass\obj\Debug\CPass.csproj.CopyComplete
