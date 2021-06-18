@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace CPass
 {
@@ -30,7 +32,14 @@ namespace CPass
             _account.password = txtPassword.Text;
             _account.notes = txtNotes.Text;
 
-            //Program.accountList[]
+            Program.accountList.Add(_account);
+            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
+
+            string json = JsonConvert.SerializeObject(Program.accountList);
+            File.WriteAllText(path, json);
+
+            MessageBox.Show("Account has been successfully added", "Account added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }

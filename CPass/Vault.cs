@@ -18,22 +18,11 @@ namespace CPass
         public Vault()
         {
             InitializeComponent();
-        }
-
-        
+        }  
 
         private void Vault_Load(object sender, EventArgs e)
         {
-            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
-            LoadAccounts(path);
 
-            using (StreamReader sr = File.OpenText(path))
-            {
-                for (int i = 0; i < Program.accountList.Count; i++)
-                {
-                    passlist.Items.Add(Program.accountList[i].title);
-                } 
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -114,6 +103,21 @@ namespace CPass
         {
             var _addAccount = new AddAccount();
             _addAccount.Show();
+        }
+
+        private void Vault_Activated(object sender, EventArgs e)
+        {
+            passlist.Items.Clear();
+            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
+            LoadAccounts(path);
+
+            using (StreamReader sr = File.OpenText(path))
+            {
+                for (int i = 0; i < Program.accountList.Count; i++)
+                {
+                    passlist.Items.Add(Program.accountList[i].title);
+                }
+            }
         }
     }
 }

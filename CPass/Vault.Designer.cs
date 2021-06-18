@@ -184,6 +184,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Vault";
             this.Text = "CPass - Your Vault";
+            this.Activated += new System.EventHandler(this.Vault_Activated);
             this.Load += new System.EventHandler(this.Vault_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
