@@ -178,6 +178,7 @@
             this.Controls.Add(this.PassGen);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Vault";
             this.Text = "CPass - Your Vault";
             this.Load += new System.EventHandler(this.Vault_Load);

@@ -8,8 +8,8 @@ namespace CPass
 {
     class Account
     {
-        public string title;
-        public string username;
-        public string password;
+        public string title { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
     }
 }

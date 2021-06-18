@@ -49,13 +49,25 @@ namespace CPass
 
         private void lockVault_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure?", "Lock Vault?");
-            Application.Exit();
+            var q = MessageBox.Show("Are you sure?", "Lock Vault?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (q == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+
+            }
         }
 
         private void passlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            accountinfo.Items.Clear();
+            int selectedIndex = passlist.SelectedIndex;
+
+            accountinfo.Items.Add(accountList[selectedIndex].title);
+            accountinfo.Items.Add(accountList[selectedIndex].username);
+            accountinfo.Items.Add(accountList[selectedIndex].password);
         }
 
         public void LoadJson(string _path)
