@@ -25,7 +25,7 @@ namespace CPass
         private void Vault_Load(object sender, EventArgs e)
         {
             string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
-            LoadJson(path);
+            LoadAccounts(path);
 
             using (StreamReader sr = File.OpenText(path))
             {
@@ -38,7 +38,8 @@ namespace CPass
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            int selectedIndex = passlist.SelectedIndex;
+            Clipboard.SetText(accountList[selectedIndex].password);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,16 +68,39 @@ namespace CPass
 
             accountinfo.Items.Add(accountList[selectedIndex].title);
             accountinfo.Items.Add(accountList[selectedIndex].username);
-            accountinfo.Items.Add(accountList[selectedIndex].password);
+
+            string hiddenPass = "";
+            for (int i = 0; i < accountList[selectedIndex].password.Length; i++)
+            {
+                hiddenPass += "*";  
+            }
+
+            accountinfo.Items.Add(hiddenPass);
         }
 
-        public void LoadJson(string _path)
+        public void LoadAccounts(string _path)
         {
             using (StreamReader r = new StreamReader(_path))
             {
                 string json = r.ReadToEnd();
                 accountList = JsonConvert.DeserializeObject<List<Account>>(json);
             }
+        }
+
+        private void showPass_Click(object sender, EventArgs e)
+        {
+            accountinfo.Items.Clear();
+            int selectedIndex = passlist.SelectedIndex;
+
+            accountinfo.Items.Add(accountList[selectedIndex].title);
+            accountinfo.Items.Add(accountList[selectedIndex].username);
+            accountinfo.Items.Add(accountList[selectedIndex].password);
+        }
+
+        private void copyUser_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = passlist.SelectedIndex;
+            Clipboard.SetText(accountList[selectedIndex].username);
         }
     }
 }

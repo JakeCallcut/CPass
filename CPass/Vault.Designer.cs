@@ -98,6 +98,7 @@
             this.showPass.TabIndex = 3;
             this.showPass.Text = "Show Password";
             this.showPass.UseVisualStyleBackColor = true;
+            this.showPass.Click += new System.EventHandler(this.showPass_Click);
             // 
             // editAccount
             // 
@@ -135,6 +136,7 @@
             this.copyUser.TabIndex = 3;
             this.copyUser.Text = "Copy Username";
             this.copyUser.UseVisualStyleBackColor = true;
+            this.copyUser.Click += new System.EventHandler(this.copyUser_Click);
             // 
             // PassGen
             // 

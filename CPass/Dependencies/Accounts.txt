@@ -1,3 +1,0 @@
-Amazon,user@gmail.com,Password1,
-Google,lucy@gmail.com,catPassword,
-reddit,pasta@gmail.com,pastaGood123,
