@@ -20,7 +20,7 @@ namespace CPass
             InitializeComponent();
         }
 
-        List<Account> accountList = new List<Account>();        
+        
 
         private void Vault_Load(object sender, EventArgs e)
         {
@@ -29,9 +29,9 @@ namespace CPass
 
             using (StreamReader sr = File.OpenText(path))
             {
-                for (int i = 0; i < accountList.Count; i++)
+                for (int i = 0; i < Program.accountList.Count; i++)
                 {
-                    passlist.Items.Add(accountList[i].title);
+                    passlist.Items.Add(Program.accountList[i].title);
                 } 
             }
         }
@@ -39,7 +39,7 @@ namespace CPass
         private void button2_Click(object sender, EventArgs e)
         {
             int selectedIndex = passlist.SelectedIndex;
-            Clipboard.SetText(accountList[selectedIndex].password);
+            Clipboard.SetText(Program.accountList[selectedIndex].password);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,16 +66,20 @@ namespace CPass
             accountinfo.Items.Clear();
             int selectedIndex = passlist.SelectedIndex;
 
-            accountinfo.Items.Add(accountList[selectedIndex].title);
-            accountinfo.Items.Add(accountList[selectedIndex].username);
+            accountinfo.Items.Add(Program.accountList[selectedIndex].title);
+            accountinfo.Items.Add(Program.accountList[selectedIndex].username);
 
             string hiddenPass = "";
-            for (int i = 0; i < accountList[selectedIndex].password.Length; i++)
+            for (int i = 0; i < Program.accountList[selectedIndex].password.Length; i++)
             {
                 hiddenPass += "*";  
             }
 
             accountinfo.Items.Add(hiddenPass);
+
+            accountinfo.Items.Add("");
+            accountinfo.Items.Add("Notes:");
+            accountinfo.Items.Add(Program.accountList[selectedIndex].notes);
         }
 
         public void LoadAccounts(string _path)
@@ -83,7 +87,7 @@ namespace CPass
             using (StreamReader r = new StreamReader(_path))
             {
                 string json = r.ReadToEnd();
-                accountList = JsonConvert.DeserializeObject<List<Account>>(json);
+                Program.accountList = JsonConvert.DeserializeObject<List<Account>>(json);
             }
         }
 
@@ -92,15 +96,24 @@ namespace CPass
             accountinfo.Items.Clear();
             int selectedIndex = passlist.SelectedIndex;
 
-            accountinfo.Items.Add(accountList[selectedIndex].title);
-            accountinfo.Items.Add(accountList[selectedIndex].username);
-            accountinfo.Items.Add(accountList[selectedIndex].password);
+            accountinfo.Items.Add(Program.accountList[selectedIndex].title);
+            accountinfo.Items.Add(Program.accountList[selectedIndex].username);
+            accountinfo.Items.Add(Program.accountList[selectedIndex].password);
+            accountinfo.Items.Add("");
+            accountinfo.Items.Add("Notes:");
+            accountinfo.Items.Add(Program.accountList[selectedIndex].notes);
         }
 
         private void copyUser_Click(object sender, EventArgs e)
         {
             int selectedIndex = passlist.SelectedIndex;
-            Clipboard.SetText(accountList[selectedIndex].username);
+            Clipboard.SetText(Program.accountList[selectedIndex].username);
+        }
+
+        private void addAccount_Click(object sender, EventArgs e)
+        {
+            var _addAccount = new AddAccount();
+            _addAccount.Show();
         }
     }
 }

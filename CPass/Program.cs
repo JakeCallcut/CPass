@@ -18,5 +18,7 @@ namespace CPass
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new OpenScreen());
         }
+
+            public static List<Account> accountList = new List<Account>();
     }
 }

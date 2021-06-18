@@ -3,17 +3,20 @@
   {
     "title": "Amazon",
     "username": "user@gmail.com",
-    "password": "Password1"
+    "password": "Password1",
+    "notes": "For purchases without cc" 
   },
   {
     "title": "Google",
     "username": "lucy@gmail.com",
-    "password": "catpassword"
+    "password": "catpassword",
+    "notes": "data harvesting company"
   },
   {
     "title": "Reddit",
     "username": "pasta@gmail.com",
-    "password": "pastaGood123"
+    "password": "pastaGood123",
+    "notes": "second account"
   }
 
 ]

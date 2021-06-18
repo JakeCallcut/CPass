@@ -11,5 +11,6 @@ namespace CPass
         public string title { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+        public string notes { get; set; }
     }
 }

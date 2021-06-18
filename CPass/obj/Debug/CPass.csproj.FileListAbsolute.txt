@@ -13,3 +13,4 @@ F:\Github repos\CPass\CPass\obj\Debug\CPass.PassGen.resources
 F:\Github repos\CPass\CPass\bin\Debug\Newtonsoft.Json.dll
 F:\Github repos\CPass\CPass\bin\Debug\Newtonsoft.Json.xml
 F:\Github repos\CPass\CPass\obj\Debug\CPass.csproj.CopyComplete
+F:\Github repos\CPass\CPass\obj\Debug\CPass.AddAccount.resources

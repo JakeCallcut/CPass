@@ -141,7 +141,7 @@
             // PassGen
             // 
             this.PassGen.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassGen.Location = new System.Drawing.Point(232, 160);
+            this.PassGen.Location = new System.Drawing.Point(218, 181);
             this.PassGen.Name = "PassGen";
             this.PassGen.Size = new System.Drawing.Size(158, 157);
             this.PassGen.TabIndex = 3;
@@ -152,17 +152,18 @@
             // addAccount
             // 
             this.addAccount.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addAccount.Location = new System.Drawing.Point(232, 22);
+            this.addAccount.Location = new System.Drawing.Point(218, 43);
             this.addAccount.Name = "addAccount";
             this.addAccount.Size = new System.Drawing.Size(158, 132);
             this.addAccount.TabIndex = 4;
             this.addAccount.Text = "Add Account";
             this.addAccount.UseVisualStyleBackColor = true;
+            this.addAccount.Click += new System.EventHandler(this.addAccount_Click);
             // 
             // lockVault
             // 
             this.lockVault.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lockVault.Location = new System.Drawing.Point(232, 326);
+            this.lockVault.Location = new System.Drawing.Point(218, 347);
             this.lockVault.Name = "lockVault";
             this.lockVault.Size = new System.Drawing.Size(158, 136);
             this.lockVault.TabIndex = 5;
