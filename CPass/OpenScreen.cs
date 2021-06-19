@@ -24,5 +24,24 @@ namespace CPass
             _vault.Show();
             this.Hide();
         }
+
+        private void OpenScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserID_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtMaster_TextChanged(object sender, EventArgs e)
+        {
+            pnlPass.BackColor = Color.FromArgb(43, 129, 128);
+        }
+
+        private void txtUserID_TextChanged(object sender, EventArgs e)
+        {
+            pnlUsername.BackColor = Color.FromArgb(43, 129, 128);
+        }
     }
 }

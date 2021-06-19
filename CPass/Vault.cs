@@ -119,5 +119,26 @@ namespace CPass
                 }
             }
         }
+
+        private void deleteAccount_Click(object sender, EventArgs e)
+        {
+            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
+            var selectedAcc = Program.accountList[passlist.SelectedIndex];
+
+            var q = MessageBox.Show("Are you sure you want to delete your " + selectedAcc.title + " account", "Delete Account?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (q == DialogResult.Yes)
+            {
+                Program.accountList.Remove(selectedAcc);        //wont remove desired account
+
+                string json = JsonConvert.SerializeObject(Program.accountList);
+                File.WriteAllText(path, json);
+
+                MessageBox.Show("Your " + selectedAcc.title + " account has been successfully deleted", "Account Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+            }
+        }
     }
 }

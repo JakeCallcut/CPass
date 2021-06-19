@@ -117,6 +117,7 @@
             this.deleteAccount.TabIndex = 3;
             this.deleteAccount.Text = "Delete Account";
             this.deleteAccount.UseVisualStyleBackColor = true;
+            this.deleteAccount.Click += new System.EventHandler(this.deleteAccount_Click);
             // 
             // copyPass
             // 
