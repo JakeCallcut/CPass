@@ -52,23 +52,29 @@ namespace CPass
 
         private void passlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            accountinfo.Items.Clear();
-            int selectedIndex = passlist.SelectedIndex;
 
-            accountinfo.Items.Add(Program.accountList[selectedIndex].title);
-            accountinfo.Items.Add(Program.accountList[selectedIndex].username);
-
-            string hiddenPass = "";
-            for (int i = 0; i < Program.accountList[selectedIndex].password.Length; i++)
+            if (passlist.SelectedIndex > Program.accountList.Count()) { }
+            else
             {
-                hiddenPass += "*";  
+                accountinfo.Items.Clear();
+                int selectedIndex = passlist.SelectedIndex;
+
+                accountinfo.Items.Add(Program.accountList[selectedIndex].title);
+                accountinfo.Items.Add(Program.accountList[selectedIndex].username);
+
+                string hiddenPass = "";
+                for (int i = 0; i < Program.accountList[selectedIndex].password.Length; i++)
+                {
+                    hiddenPass += "*";  
+                }
+
+                accountinfo.Items.Add(hiddenPass);
+
+                accountinfo.Items.Add("");
+                accountinfo.Items.Add("Notes:");
+                accountinfo.Items.Add(Program.accountList[selectedIndex].notes);
             }
 
-            accountinfo.Items.Add(hiddenPass);
-
-            accountinfo.Items.Add("");
-            accountinfo.Items.Add("Notes:");
-            accountinfo.Items.Add(Program.accountList[selectedIndex].notes);
         }
 
         public void LoadAccounts(string _path)
@@ -125,19 +131,13 @@ namespace CPass
             string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
             var selectedAcc = Program.accountList[passlist.SelectedIndex];
 
-            var q = MessageBox.Show("Are you sure you want to delete your " + selectedAcc.title + " account", "Delete Account?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (q == DialogResult.Yes)
-            {
-                Program.accountList.Remove(selectedAcc);        //wont remove desired account
+            Program.accountList.RemoveAt(passlist.SelectedIndex);        
 
+            {
                 string json = JsonConvert.SerializeObject(Program.accountList);
                 File.WriteAllText(path, json);
 
                 MessageBox.Show("Your " + selectedAcc.title + " account has been successfully deleted", "Account Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-
             }
         }
     }

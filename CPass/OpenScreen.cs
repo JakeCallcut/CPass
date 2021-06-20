@@ -43,5 +43,10 @@ namespace CPass
         {
             pnlUsername.BackColor = Color.FromArgb(43, 129, 128);
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
