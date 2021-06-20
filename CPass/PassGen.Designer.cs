@@ -30,6 +30,7 @@
         {
             this.lblPass = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblLength = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.barLength = new System.Windows.Forms.TrackBar();
             this.optSymbols = new System.Windows.Forms.CheckBox();
@@ -39,7 +40,7 @@
             this.btnGen = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.lblLength = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barLength)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPass.ForeColor = System.Drawing.Color.White;
             this.lblPass.Location = new System.Drawing.Point(14, 36);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(196, 47);
@@ -64,12 +66,22 @@
             this.groupBox1.Controls.Add(this.optLower);
             this.groupBox1.Controls.Add(this.optCapitals);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(22, 115);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(203, 323);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
+            // 
+            // lblLength
+            // 
+            this.lblLength.AutoSize = true;
+            this.lblLength.Location = new System.Drawing.Point(7, 279);
+            this.lblLength.Name = "lblLength";
+            this.lblLength.Size = new System.Drawing.Size(21, 23);
+            this.lblLength.TabIndex = 5;
+            this.lblLength.Text = "8";
             // 
             // label2
             // 
@@ -94,6 +106,8 @@
             // optSymbols
             // 
             this.optSymbols.AutoSize = true;
+            this.optSymbols.Checked = true;
+            this.optSymbols.CheckState = System.Windows.Forms.CheckState.Checked;
             this.optSymbols.Location = new System.Drawing.Point(11, 155);
             this.optSymbols.Name = "optSymbols";
             this.optSymbols.Size = new System.Drawing.Size(121, 27);
@@ -104,6 +118,8 @@
             // optNumbers
             // 
             this.optNumbers.AutoSize = true;
+            this.optNumbers.Checked = true;
+            this.optNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.optNumbers.Location = new System.Drawing.Point(11, 112);
             this.optNumbers.Name = "optNumbers";
             this.optNumbers.Size = new System.Drawing.Size(77, 27);
@@ -114,6 +130,8 @@
             // optLower
             // 
             this.optLower.AutoSize = true;
+            this.optLower.Checked = true;
+            this.optLower.CheckState = System.Windows.Forms.CheckState.Checked;
             this.optLower.Location = new System.Drawing.Point(11, 70);
             this.optLower.Name = "optLower";
             this.optLower.Size = new System.Drawing.Size(78, 27);
@@ -124,6 +142,8 @@
             // optCapitals
             // 
             this.optCapitals.AutoSize = true;
+            this.optCapitals.Checked = true;
+            this.optCapitals.CheckState = System.Windows.Forms.CheckState.Checked;
             this.optCapitals.Location = new System.Drawing.Point(11, 31);
             this.optCapitals.Name = "optCapitals";
             this.optCapitals.Size = new System.Drawing.Size(80, 27);
@@ -133,13 +153,17 @@
             // 
             // btnGen
             // 
+            this.btnGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.btnGen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(129)))), ((int)(((byte)(128)))));
+            this.btnGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGen.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGen.ForeColor = System.Drawing.Color.White;
             this.btnGen.Location = new System.Drawing.Point(231, 127);
             this.btnGen.Name = "btnGen";
             this.btnGen.Size = new System.Drawing.Size(167, 85);
             this.btnGen.TabIndex = 2;
             this.btnGen.Text = "Regenerate Password";
-            this.btnGen.UseVisualStyleBackColor = true;
+            this.btnGen.UseVisualStyleBackColor = false;
             this.btnGen.Click += new System.EventHandler(this.btnGen_Click);
             // 
             // btnCopy
@@ -155,34 +179,47 @@
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(129)))), ((int)(((byte)(128)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(254, 360);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(144, 78);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // lblLength
+            // button1
             // 
-            this.lblLength.AutoSize = true;
-            this.lblLength.Location = new System.Drawing.Point(7, 279);
-            this.lblLength.Name = "lblLength";
-            this.lblLength.Size = new System.Drawing.Size(21, 23);
-            this.lblLength.TabIndex = 5;
-            this.lblLength.Text = "8";
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(129)))), ((int)(((byte)(128)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(231, 218);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 79);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Copy Password";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // PassGen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
             this.ClientSize = new System.Drawing.Size(421, 450);
             this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnGen);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblPass);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PassGen";
             this.Text = "CPass - Password Generator";
             this.groupBox1.ResumeLayout(false);
@@ -207,5 +244,6 @@
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblLength;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -20,5 +20,6 @@ namespace CPass
         }
 
             public static List<Account> accountList = new List<Account>();
+            public static int currAccountIndex;
     }
 }

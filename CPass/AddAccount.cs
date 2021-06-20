@@ -33,7 +33,7 @@ namespace CPass
             _account.notes = txtNotes.Text;
 
             Program.accountList.Add(_account);
-            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
+            string path = @"..\Dependencies\Accounts.json";
 
             string json = JsonConvert.SerializeObject(Program.accountList);
             File.WriteAllText(path, json);

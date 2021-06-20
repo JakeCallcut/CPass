@@ -27,8 +27,12 @@ namespace CPass
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int selectedIndex = passlist.SelectedIndex;
-            Clipboard.SetText(Program.accountList[selectedIndex].password);
+            if (passlist.SelectedIndex == -1 || passlist.SelectedIndex > Program.accountList.Count()) { }
+            else
+            {
+                int selectedIndex = passlist.SelectedIndex;
+                Clipboard.SetText(Program.accountList[selectedIndex].password);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,15 +56,16 @@ namespace CPass
 
         private void passlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if (passlist.SelectedIndex > Program.accountList.Count()) { }
+            if (passlist.SelectedIndex == -1 || passlist.SelectedIndex > Program.accountList.Count()) { }
             else
             {
                 accountinfo.Items.Clear();
                 int selectedIndex = passlist.SelectedIndex;
 
                 accountinfo.Items.Add(Program.accountList[selectedIndex].title);
+                accountinfo.Items.Add("");
                 accountinfo.Items.Add(Program.accountList[selectedIndex].username);
+                accountinfo.Items.Add("");
 
                 string hiddenPass = "";
                 for (int i = 0; i < Program.accountList[selectedIndex].password.Length; i++)
@@ -70,9 +75,13 @@ namespace CPass
 
                 accountinfo.Items.Add(hiddenPass);
 
-                accountinfo.Items.Add("");
-                accountinfo.Items.Add("Notes:");
-                accountinfo.Items.Add(Program.accountList[selectedIndex].notes);
+                if (Program.accountList[selectedIndex].notes == "") { }
+                else
+                {
+                    accountinfo.Items.Add("");
+                    accountinfo.Items.Add("Notes:");
+                    accountinfo.Items.Add(Program.accountList[selectedIndex].notes);
+                }
             }
 
         }
@@ -88,21 +97,36 @@ namespace CPass
 
         private void showPass_Click(object sender, EventArgs e)
         {
-            accountinfo.Items.Clear();
-            int selectedIndex = passlist.SelectedIndex;
+            if (passlist.SelectedIndex == -1 || passlist.SelectedIndex > Program.accountList.Count()) { }
+            else
+            {
+                accountinfo.Items.Clear();
+                int selectedIndex = passlist.SelectedIndex;
 
-            accountinfo.Items.Add(Program.accountList[selectedIndex].title);
-            accountinfo.Items.Add(Program.accountList[selectedIndex].username);
-            accountinfo.Items.Add(Program.accountList[selectedIndex].password);
-            accountinfo.Items.Add("");
-            accountinfo.Items.Add("Notes:");
-            accountinfo.Items.Add(Program.accountList[selectedIndex].notes);
+                accountinfo.Items.Add(Program.accountList[selectedIndex].title);
+                accountinfo.Items.Add("");
+                accountinfo.Items.Add(Program.accountList[selectedIndex].username);
+                accountinfo.Items.Add("");
+                accountinfo.Items.Add(Program.accountList[selectedIndex].password);
+
+                if (Program.accountList[selectedIndex].notes == "") { }
+                else
+                {
+                    accountinfo.Items.Add("");
+                    accountinfo.Items.Add("Notes:");
+                    accountinfo.Items.Add(Program.accountList[selectedIndex].notes);
+                }
+            }
         }
 
         private void copyUser_Click(object sender, EventArgs e)
         {
-            int selectedIndex = passlist.SelectedIndex;
-            Clipboard.SetText(Program.accountList[selectedIndex].username);
+            if (passlist.SelectedIndex == -1 || passlist.SelectedIndex > Program.accountList.Count()) { }
+            else
+            {
+                int selectedIndex = passlist.SelectedIndex;
+                Clipboard.SetText(Program.accountList[selectedIndex].username);
+            }
         }
 
         private void addAccount_Click(object sender, EventArgs e)
@@ -114,7 +138,7 @@ namespace CPass
         private void Vault_Activated(object sender, EventArgs e)
         {
             passlist.Items.Clear();
-            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
+            string path = @"..\Dependencies\Accounts.json";
             LoadAccounts(path);
 
             using (StreamReader sr = File.OpenText(path))
@@ -128,17 +152,31 @@ namespace CPass
 
         private void deleteAccount_Click(object sender, EventArgs e)
         {
-            string path = @"f:\Github repos\CPass\CPass\Dependencies\Accounts.json";
-            var selectedAcc = Program.accountList[passlist.SelectedIndex];
 
-            Program.accountList.RemoveAt(passlist.SelectedIndex);        
-
+            if (passlist.SelectedIndex == -1 || passlist.SelectedIndex > Program.accountList.Count()) { }
+            else
             {
+                string path = @"..\Dependencies\Accounts.json";
+                var selectedAcc = Program.accountList[passlist.SelectedIndex];
+
+                Program.accountList.RemoveAt(passlist.SelectedIndex);        
                 string json = JsonConvert.SerializeObject(Program.accountList);
                 File.WriteAllText(path, json);
 
                 MessageBox.Show("Your " + selectedAcc.title + " account has been successfully deleted", "Account Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void editAccount_Click(object sender, EventArgs e)
+        {
+            Program.currAccountIndex = passlist.SelectedIndex;
+            var _edit = new EditAccount();
+            _edit.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
