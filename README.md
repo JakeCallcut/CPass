@@ -1,6 +1,8 @@
 <p align="center">
     <img src="https://github.com/JakeCallcut/CPass/blob/main/CPass/bin/Dependencies/mainSC.png" width=400 style="margin-bottom:-25px"><br>
-</p>
+    <img src="https://img.shields.io/badge/Framework-.NET-ff69b4"  style="margin-right: 5px">
+    <img src="https://img.shields.io/badge/Language-C%23-blueviolet"  style="margin-right:-5px"><br>
+    </p>
 
 # 🔐CPass
 CPass is a secure, offline password manager built to allow you to simply and securely manage your passwords and accounts offline. With a clean and simple interface, CPass allows you to secure your digital life without having to trust a company or server with your data.
